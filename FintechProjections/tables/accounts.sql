@@ -1,0 +1,11 @@
+
+-- Create Accounts table
+CREATE TABLE Accounts (
+    AccountID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT,
+    AccountName VARCHAR(100) NOT NULL,
+    AccountType VARCHAR(50) NOT NULL,
+    Balance DECIMAL(15, 2) NOT NULL DEFAULT 0,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
+);
